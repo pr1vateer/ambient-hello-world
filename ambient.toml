@@ -1,0 +1,4 @@
+[project]
+id = "ambient_hello_world"
+name = "ambient-hello-world"
+version = "0.0.1"
