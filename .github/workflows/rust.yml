@@ -1,0 +1,25 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install prerequisites
+      run: sudo apt-get update && sudo apt-get install -y build-essential cmake pkg-config libfontconfig1-dev clang libasound2-dev ninja-build libxcb-xfixes0-dev mesa-vulkan-drivers
+    - name: Install ambient
+      run: cargo install --git https://github.com/AmbientRun/Ambient.git --tag v0.1.1
+    - name: Build
+      run: ambient build
+      
