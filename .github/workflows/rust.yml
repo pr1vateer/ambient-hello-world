@@ -21,5 +21,5 @@ jobs:
     - name: Install ambient
       run: wget https://github.com/AmbientRun/Ambient/releases/download/v0.1.1/ambient-x86_64-unknown-linux-gnu.zip && unzip ambient-x86_64-unknown-linux-gnu.zip && echo "$pwd" && echo "$pwd" >> $GITHUB_PATH
     - name: Build
-      run: ambient build
+      run: ./ambient build
       
