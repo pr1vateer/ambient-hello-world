@@ -17,9 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install prerequisites
-      run: sudo apt-get update && sudo apt-get install -y build-essential cmake pkg-config libfontconfig1-dev clang libasound2-dev ninja-build libxcb-xfixes0-dev mesa-vulkan-drivers
+      run: sudo apt-get update && sudo apt-get install -y build-essential unzip cmake pkg-config libfontconfig1-dev clang libasound2-dev ninja-build libxcb-xfixes0-dev mesa-vulkan-drivers
     - name: Install ambient
-      run: cargo install --git https://github.com/AmbientRun/Ambient.git --tag v0.1.1
+      run: wget https://github.com/AmbientRun/Ambient/releases/download/v0.1.1/ambient-x86_64-unknown-linux-gnu.zip && unzip ambient-x86_64-unknown-linux-gnu.zip
     - name: Build
       run: ambient build
       
